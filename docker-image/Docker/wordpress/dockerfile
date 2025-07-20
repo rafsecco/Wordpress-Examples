@@ -1,0 +1,23 @@
+FROM wordpress:php8.4-fpm-alpine
+
+# Instalar o driver PHP para PostgreSQL
+RUN apk --no-cache add postgresql-dev && \
+  docker-php-ext-install pdo_pgsql pgsql
+
+# Copiar o arquivo php.ini personalizado
+COPY ./php.ini /usr/local/etc/php/
+# Ou Alterar as configurações do PHP diretamente no Dockerfile
+# RUN echo "upload_max_filesize = 100M" >> /usr/local/etc/php/conf.d/uploads.ini && \
+#   echo "post_max_size = 100M" >> /usr/local/etc/php/conf.d/uploads.ini && \
+#   echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini && \
+#   echo "max_input_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini
+
+# Remover os temas padrão
+# RUN rm -rf /var/www/html/wp-content/themes/twentyseventeen \
+#   && rm -rf /var/www/html/wp-content/themes/twentyten \
+#   && rm -rf /var/www/html/wp-content/themes/twentynineteen \
+#   && rm -rf /var/www/html/wp-content/themes/twentyfifteen \
+#   && rm -rf /var/www/html/wp-content/themes/twentyfourteen
+
+# Outras instruções
+RUN chown -R www-data:www-data /var/www/html

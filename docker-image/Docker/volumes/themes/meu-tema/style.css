@@ -1,0 +1,40 @@
+/*
+Theme Name: Meu Tema
+Theme URI: http://example.com/meu-tema
+Author: Seu Nome
+Author URI: http://example.com
+Description: Um tema simples para o WordPress
+Version: 1.0
+License: GPL2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: meu-tema
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+h1 {
+  color: #1a73e8;
+}

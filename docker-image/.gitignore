@@ -1,2 +1,3 @@
 # Ignore WordPress core files
 src/wp-content/
+Docker/volumes/wp-content
